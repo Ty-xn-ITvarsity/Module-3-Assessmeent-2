@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Burger - Taste of Africa Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-size: 18px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .back-btn {
+            background: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #333;
+            align-self: flex-start;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .back-btn:hover {
+            background-color: #FF8C00;
+            color: white;
+        }
+
+        .meal-detail {
+            text-align: left;
+            width: 100%;
+        }
+
+        .meal-detail-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .meal-info {
+            max-width: 900px;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        .meal-info h1 {
+            font-size: 3em;
+            text-align: left;
+        }
+
+        .price-portion {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.3em;
+        }
+
+        .description {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .price {
+            font-weight: 600;
+        }
+
+        .price i {
+            color: #FF8C00;
+        }
+
+        .portion i {
+            color: #000;
+        }
+
+        .order-form {
+            max-width: 900px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .order-form h2 {
+            font-size: 2.3em;
+            text-align: left;
+        }
+
+        .extras-section,
+        .notes-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: left;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .extras-section:hover,
+        .notes-section:hover {
+            border-color: #FF8C00;
+        }
+
+        .extras-section h3 {
+            margin-top: 0;
+            text-align: left;
+            font-size: 1.8em;
+        }
+
+        .extras-section h3 i {
+            color: #FF8C00;
+        }
+
+        .checkbox-label {
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            color: #333;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .checkbox-label:hover {
+            background-color: #FF8C00;
+            color: white;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-label input[type="checkbox"]:hover {
+            border-color: #FF8C00;
+        }
+
+        .checkbox-label input[type="checkbox"]:checked {
+            background-color: #FF8C00;
+            border-color: #FF8C00;
+        }
+
+        .checkbox-label input[type="checkbox"]:checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 14px;
+        }
+
+        .notes-section label {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 2em;
+        }
+
+        .notes-section label i {
+            color: #FF8C00;
+        }
+
+        .notes-section textarea {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1.6em;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .notes-section textarea:focus {
+            outline: none;
+            border-color: #FF8C00;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .place-order-btn,
+        .add-to-wishlist-btn,
+        .reorder-btn {
+            flex: 1;
+            min-width: 180px;
+            background-color: #FF8C00 !important;
+            padding: 14px 20px;
+            height: 50px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .place-order-btn:hover,
+        .add-to-wishlist-btn:hover,
+        .reorder-btn:hover {
+            background-color: #FF7700 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="images/logo.jpeg" alt="Taste of Africa Logo" class="logo">
+            <a href="index.html" class="nav-link">Home</a>
+        </nav>
+    </header>
+    <main>
+        <a href="main-courses.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Main Courses
+        </a>
+
+        <div class="meal-detail">
+            <img src="images/gourmet-burger.jpg" alt="Gourmet Burger" class="meal-detail-img">
+            <div class="meal-info">
+                <h1>Gourmet Burger</h1>
+                <div class="price-portion">
+                    <p class="price"><i class="fas fa-tag"></i> R79.99</p>
+                    <p class="portion"><i class="fas fa-utensils"></i> Serves 1-2</p>
+                </div>
+                <p class="description">Juicy beef patty with melted cheese, lettuce, tomato, and our special sauce.</p>
+            </div>
+        </div>
+
+        <form class="order-form" action="confirmation.html" method="get">
+            <h2>Customize Your Order</h2>
+            <div class="extras-section">
+                <h3><i class="fas fa-plus-circle"></i> Add Extras</h3>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="extras[]" value="Extra Guacamole (+R10)">
+                    Extra Guacamole (+R10)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="extras[]" value="Extra Sour Cream (+R5)">
+                    Extra Sour Cream (+R5)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="extras[]" value="Jalapenos (+R15)">
+                    Jalapenos (+R15)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="extras[]" value="Extra Black Beans (+R8)">
+                    Extra Black Beans (+R8)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="extras[]" value="Extra Cheese (+R12)">
+                    Extra Cheese (+R12)
+                </label>
+            </div>
+
+            <div class="notes-section">
+                <label for="special-notes"><i class="fas fa-comment-dots"></i> Special Notes/Requests</label>
+                <textarea id="special-notes" name="notes" rows="4" placeholder="Any special instructions or dietary requirements..."></textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="place-order-btn">
+                    <i class="fas fa-shopping-cart"></i> Place Order
+                </button>
+                <button type="button" class="add-to-wishlist-btn" onclick="addToWishlist('Gourmet Burger')">
+                    <i class="fas fa-heart"></i> Add to Wishlist
+                </button>
+                <button type="button" class="reorder-btn">
+                    <i class="fas fa-redo"></i> Reorder
+                </button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Taste of Africa Restaurant</p>
+        <p>
+            <a href="tel:0120983456"><i class="fas fa-phone"></i> 012 098 3456</a> |
+            <a href="mailto:info@tasteofafrica.com"><i class="fas fa-envelope"></i> info@tasteofafrica.com</a> |
+            <a href="https://facebook.com/tasteofafrica" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i> Facebook: tasteofafrica
+            </a> |
+            <a href="https://wa.me/27120983456" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i> WhatsApp: +27 12 098 3456
+            </a>
+        </p>
+    </footer>
+    <script>
+        document.querySelector('.reorder-btn').onclick = function() {
+            window.location.href = 'orders.html';
+        };
+    </script>
+    <script src="wishlist.js"></script>
+</body>
+</html>

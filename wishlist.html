@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wishlist - Taste of Africa Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        main {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        h1 {
+            color: #FF8C00;
+            margin-bottom: 24px;
+        }
+        .wishlist-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        .wishlist-item {
+            background: #f9f9f9;
+            margin-bottom: 16px;
+            padding: 16px 18px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1.15em;
+        }
+        .wishlist-icon {
+            color: #FF8C00;
+            font-size: 1.5em;
+        }
+        .empty-message {
+            color: #888;
+            font-size: 1.1em;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="images/logo.jpeg" alt="Taste of Africa Logo" class="logo">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="starters.html" class="nav-link">Starters</a>
+            <a href="orders.html" class="nav-link">Orders</a>
+            <a href="main-courses.html" class="nav-link">Main Course</a>
+            <a href="desserts.html" class="nav-link">Desserts</a>
+            <a href="drinks.html" class="nav-link">Drinks</a>
+        </nav>
+    </header>
+    <main>
+        <h1><i class="fas fa-heart"></i> Your Wishlist</h1>
+        <ul class="wishlist-list" id="wishlistList"></ul>
+        <p class="empty-message" id="emptyMessage">No dishes saved yet. Add your favorites!</p>
+    </main>
+    <footer>
+          <p>&copy; 2025 Taste of Africa Restaurant</p>
+    <p>
+        <a href="tel:0120983456"><i class="fas fa-phone"></i> 012 098 3456</a> |
+        <a href="mailto:info@tasteofafrica.com"><i class="fas fa-envelope"></i> info@tasteofafrica.com</a> |
+        <a href="https://facebook.com/tasteofafrica" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook"></i> Facebook: tasteofafrica
+        </a> |
+        <a href="https://wa.me/27120983456" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp: +27 12 098 3456
+        </a>
+    </p>
+    </footer>
+    <script>
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const wishlistList = document.getElementById('wishlistList');
+        const emptyMessage = document.getElementById('emptyMessage');
+        if (wishlist.length > 0) {
+            emptyMessage.style.display = 'none';
+            wishlist.forEach(dish => {
+                const li = document.createElement('li');
+                li.className = 'wishlist-item';
+                li.innerHTML = `<span class="wishlist-icon"><i class="fas fa-utensils"></i></span> ${dish}`;
+                wishlistList.appendChild(li);
+            });
+        } else {
+            wishlistList.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

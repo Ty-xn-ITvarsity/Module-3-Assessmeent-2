@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders - Taste of Africa Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .orders-list {
+            list-style: none;
+            padding: 0;
+        }
+        .order-item {
+            background: #f9f9f9;
+            margin-bottom: 18px;
+            padding: 18px 16px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .order-icon {
+            font-size: 2em;
+            color: #FF8C00;
+            margin-right: 10px;
+        }
+        .order-details {
+            flex: 1;
+        }
+        .order-status {
+            font-weight: bold;
+            color: #219150;
+        }
+        .order-status.in-progress {
+            color: #FF8C00;
+        }
+        .order-status.delivered {
+            color: #219150;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+         <nav class="navbar">
+        <img src="images/logo.jpeg" alt="Taste of Africa Logo" class="logo">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="starters.html" class="nav-link">Starters</a>
+            <a href="wishlist.html" class="nav-link">Wishlist</a>
+            <a href="main-course.html" class="nav-link">Main Course</a>
+            <a href="desserts.html" class="nav-link">Desserts</a>
+            <a href="drinks.html" class="nav-link">Drinks</a>
+        </nav>
+    </header>
+    <main>
+        <h1><i class="fas fa-receipt"></i> Your Orders</h1>
+        <ul class="orders-list">
+            <li class="order-item">
+                <span class="order-icon"><i class="fas fa-check-circle"></i></span>
+                <div class="order-details">
+                    <strong>Order #1001</strong><br>
+                    <span>Gourmet Burger, 2x Tsubvu Juice</span><br>
+                    <span class="order-status delivered"><i class="fas fa-truck"></i> Delivered</span>
+                </div>
+            </li>
+            <li class="order-item">
+                <span class="order-icon"><i class="fas fa-hourglass-half"></i></span>
+                <div class="order-details">
+                    <strong>Order #1002</strong><br>
+                    <span>Grilled Salmon, 1x Dessert</span><br>
+                    <span class="order-status in-progress"><i class="fas fa-spinner"></i> In Progress</span>
+                </div>
+            </li>
+        </ul>
+        <p style="text-align:center; color:#888;">
+            <i class="fas fa-info-circle"></i> Past and current orders will be shown here.
+        </p>
+    </main>
+    <footer>
+          <p>&copy; 2025 Taste of Africa Restaurant</p>
+    <p>
+        <a href="tel:0120983456"><i class="fas fa-phone"></i> 012 098 3456</a> |
+        <a href="mailto:info@tasteofafrica.com"><i class="fas fa-envelope"></i> info@tasteofafrica.com</a> |
+        <a href="https://facebook.com/tasteofafrica" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook"></i> Facebook: tasteofafrica
+        </a> |
+        <a href="https://wa.me/27120983456" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp: +27 12 098 3456
+        </a>
+    </p>
+    </footer>
+</body>
+</html>
